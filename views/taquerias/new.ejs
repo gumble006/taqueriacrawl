@@ -1,0 +1,35 @@
+<h4 class="text-center">Add a new taqueria!</h4>
+
+<form class="" action="/taquerias" method="POST" id="addeditform">
+	<label for="name">Restaurant Name</label>
+	<input class="form-control" type="text" name="name" placeholder="Name" required></input>
+	<br><p><em>If you can find an image online you can paste it's URL here</em></p>
+	
+	<label for="image">URL for image</label>
+	<input class="form-control" type="text" name="image" placeholder="Image URL"></input>
+
+	<label for="address">Address (include city/state)</label>
+	<input class="form-control" type="text" name="address" placeholder="Address" required></input>
+
+	<label for="bikeparking">Additional Amenities</label>
+	<div class="text-left">
+		<input type="checkbox" name="bikeparking" value="checked"> Bike Parking</input><br>
+		<input type="checkbox" name="barter" value="checked"> Barter/Trade Available</input><br>
+		<input type="checkbox" name="salsabar" value="checked"> Salsa Bar</input>
+	</div>
+	<label for="price">Average price for a burrito?</label>
+	<select name="price" form="addeditform">
+	  <option value="$4 or less">$4 or less</option>
+	  <option value="$5 - $8">$5 - $8</option>
+	  <option value="$9 and above">$9 and above</option>
+	</select>
+	<label for="description">Review</label>
+	<textarea form="addeditform" class="form-control" type="textarea" name="description" placeholder="Brief Review"></textarea>
+
+	<button class="button round">Add in</button>
+</form>
+
+<button class="close-button" data-close aria-label="Close modal" type="button">
+<span aria-hidden="true">&times;</span>
+</button>
+

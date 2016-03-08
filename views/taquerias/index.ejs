@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<div class="reveal" id="AddModal" data-reveal></div>
+
+<div class="container">
+
+	<header class="row">
+	<div class="small-12 column jumbo">
+		<h1>TaqueriaCrawl</h1>
+		<p>TaqueriaCrawl enables anyone to publish and access information on great mexican food spots in Portland.</p>
+		<p>
+			<a data-open="AddModal" id="addbutton" class="button small round">Add a new taqueria</a>
+		</p>
+	</div>
+	
+	</header>
+
+	<div class="row" style="display:flex; flex-wrap: wrap;">
+		<% taquerias.forEach(function(taqueria){ %>
+			<div class="small-12 medium-6 large-3 column">
+				<div>
+					<a href="/taquerias/<%= taqueria._id %>">
+					<h4><%= taqueria.name %></h4>
+					<img src="<%=taqueria.image%>" class="thumbnail index img-responsive">
+					
+					<p>
+					<a class="button small round" href="/taquerias/<%= taqueria._id %>">More Info</a>
+					</p></a>
+				</div>
+			</div>
+		<% }) %>
+	</div>
+</div>
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TaqueriaCrawl</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.0/foundation.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+<nav class="top-bar">
+	<div class="top-bar-left">
+		<ul class="menu">
+			<li><a href="/"><img src="/img/logo.png" id="logo"><span>TaqueriaCrawl</span></a></li>
+		</ul>
+	</div>
+
+	<div class="top-bar-right">
+		<ul class="menu">
+		  <% if(!currentUser) { %>
+					<li><a data-open="LoginModal" id="loginlink">Login</a></li>
+					<li><a href="/register">Sign Up</a></li>
+				<%} else { %>
+					<li><a href="#">Logged in as: <strong><%= currentUser.username %></strong></a></li>
+					<li><a href="/logout">Log Out</a></li>
+				<% } %>
+		</ul>
+	</div>
+</nav>
+
+<div class="row">
+	<div class="small-12 column">
+		<% if (error && error.length > 0) { %>
+		<div class="callout small alert" role="alert"><%= error %></div>
+	<% } %>
+
+	<% if (success && success.length > 0) { %>
+		<div class="callout small success" role="alert"><%= success %></div>
+	<% } %>
+	</div>
+</div>
+
+<div class="reveal" id="LoginModal" data-reveal>
+</div>

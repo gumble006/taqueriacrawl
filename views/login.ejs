@@ -1,0 +1,24 @@
+<div class="row">
+	<div class="small-12 column">
+		<% if (error && error.length > 0) { %>
+		<div class="callout small alert" role="alert"><%= error %></div>
+	<% } %>
+
+	<% if (success && success.length > 0) { %>
+		<div class="callout small success" role="alert"><%= success %></div>
+	<% } %>
+
+
+	</div>
+</div>
+<h3 class="text-center">Sign in to continue to TacoCrawl</h3>
+<form class="AddEditForm" action="/login" method="POST">
+	<input type="text" name="username" placeholder="username"></input>
+	<input type="password" name="password" placeholder="password"></input>
+	<button class="button round">Login</button>	
+</form>
+<a href="/register">Sign Up</a>
+
+<button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>

@@ -1,0 +1,63 @@
+<h4 class="text-center">Edit entry for <%= taqueria.name %></h4>
+
+<form action="/taquerias/<%= taqueria._id %>/?_method=PUT" method="POST">
+	<label for="taqueria[name]">Restaurant Name</label>
+	<input class="form-control" type="text" name="taqueria[name]" value="<%=taqueria.name%>" required></input>
+	<br><p><em>If you can find an image online you can paste it's URL here</em></p>
+	
+	<label for="taqueria[image]">URL for image</label>
+	<input class="form-control" type="text" name="taqueria[image]" value="<%=taqueria.image%>"></input>
+
+	<label for="taqueria[address]">Address (include city/state)</label>
+	<input class="form-control" type="text" name="taqueria[address]" value="<%=taqueria.address%>" required></input>
+
+	<label for="taqueria[bikeparking]">Additional Amenities</label>
+	<div class="text-left">
+
+		<input type="checkbox" name="taqueria[bikeparking]" value="true" <% if(taqueria.bikeparking) { %>
+			checked
+			<%}%>
+			> Bike Parking</input><br>
+
+		<input type="checkbox" name="taqueria[barter]" value="true" <% if(taqueria.barter) { %>
+			checked
+			<%}%>
+			> Barter/Trade Available</input><br>
+		
+		<input type="checkbox" name="taqueria[salsabar]" value="true" <% if(taqueria.salsabar) { %>
+			checked
+			<%}%>
+			> Salsa Bar</input><br>
+
+	</div>
+	<label for="taqueria[price]">Average price for a burrito?</label>
+	<select name="taqueria[price]">
+	  
+	  <option value="$4 or less"
+	  <%if(taqueria.price === "$4 or less"){ %>
+	  	selected
+	  	<%}%> 
+	  	>$4 or less</option>
+	  
+	  <option value="$5 - $8"
+	  <%if(taqueria.price === "$5 - $8"){ %>
+	  	selected
+	  	<%}%> 
+	  	>$5 - $8</option>
+
+	  <option value="$9 and above"
+	  <%if(taqueria.price === "$9 and above"){ %>
+	  	selected
+	  	<%}%> 
+	  	>$9 and above</option>
+	
+	</select>
+	<label for="taqueria[description]">Review</label>
+	<textarea class="form-control" name="taqueria[description]"><%=taqueria.description%></textarea>
+
+	<button class="button round">Make Edits</button>
+</form>
+
+<!-- <button class="close-button" data-close aria-label="Close modal" type="button">
+<span aria-hidden="true">&times;</span>
+</button> -->

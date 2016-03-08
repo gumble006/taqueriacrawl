@@ -1,0 +1,80 @@
+<% include ../partials/header %>
+
+<div id="postid" data-internalid="<%= taqueria._id %>"></div>
+
+<div class="container">
+	<div class="row">
+		<div class="medium-3 column">
+			<p class="lead"><%= taqueria.name %></p>
+			<em><p class="subheader">Submitted by <%= taqueria.author.username %></p></em>
+			<div class="bizinfo no-bullet">
+				<li class="list-group-item active">Address</li>
+					<p class="subheader"><a href="http://maps.google.com?q=<%= taqueria.address %>" target="_blank"><%= taqueria.address.toUpperCase() %></a></p>
+		
+				<li class="list-group-item">More Business Info</li>
+					
+						<% if(taqueria.bikeparking){ %>
+						<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Bike Parking Available</li>
+						<% } %>
+
+						<% if(taqueria.barter){ %>
+						<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Accepts Barter/Trade</li>
+						<% } %>
+
+						<% if(taqueria.salsabar){ %>
+						<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Salsa Bar</li>
+						<% } %>
+			</div>
+		</div>
+		<div class="medium-9 column">
+			<div class="thumbnail show-thumbnail">
+				<img class="img-responsive" src="<%= taqueria.image %>">
+				<div class="caption-full">
+					<p class="float-right">Average <%=taqueria.price%> / burrito</p>
+					<h4><%= taqueria.name %></h4>
+					<p><%= taqueria.description %></p>
+					<em><p>Submitted by <%= taqueria.author.username %></p></em>
+ 
+					<% if(currentUser && taqueria.author.id.equals(currentUser._id)) { %>
+
+						<a class="button round warning" data-open="EditModal" id="editlink"><i class="fa fa-pencil"></i> Edit Post</a>
+						<form class="delete-form" action="/taquerias/<%= taqueria._id %>?_method=DELETE" method="POST">
+						<button class="button round alert"><i class='fa fa-times'></i> Delete</button>
+						</form>
+					<% } %>
+				</div>
+			</div>
+			
+			<div class="">
+				<div class="text-right">
+					<a class="button success" href="/taquerias/<%= taqueria._id %>/comments/new"><i class="fa fa-plus"></i> Write a Review</a>
+				</div>
+				<hr>
+				<% taqueria.comments.forEach(function(comment){ %>
+					<div class="row">
+						<div class="medium-12 column">
+							<strong><%= comment.author.username %></strong>
+							<span class="pull-right">10 days ago</span>
+							<p>
+							<%=comment.text%>
+							</p>
+							<% if(currentUser && comment.author.id.equals(currentUser._id)) { %>
+								<a class="button round tiny warning" href="/taquerias/<%= taqueria._id %>/comments/<%= comment._id %>/edit"><i class="fa fa-pencil"></i> Edit</a>
+							
+								<form class="delete-form" id="comment" action="/taquerias/<%= taqueria._id %>/comments/<%= comment._id %>?_method=delete" method="POST">
+								
+								<button type="submit" class="button round tiny alert" form="comment" value="Delete"><i class='fa fa-times'></i> Delete</button>
+								</form>
+							<% } %>
+						</div>
+					</div> 
+				<% }); %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="reveal" id="EditModal" data-reveal></div>
+
+
+<% include ../partials/footer %>

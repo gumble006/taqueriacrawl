@@ -1,0 +1,125 @@
+.container {
+	padding: 2em 1em 1em 1em;
+	color: #fc4344;
+}
+
+.thumbnail img {
+	min-width: 100%;
+}
+
+.index {
+	height: 200px;
+}
+
+.thumbnail .caption-full {
+	padding: 9px;
+}
+
+.show-thumbnail {
+
+}
+
+.button {
+	background-color: #fc4344;
+}
+
+.button:hover {
+	background-color: #8dc63f;
+}
+
+.AddEditForm  {
+	width: 30%;
+	margin: 0 auto;
+}
+
+.delete-form {
+	display: inline;
+}
+
+.button.round {
+	border-radius: 4px;
+}
+
+.callout {
+	margin-top: 10px;
+}
+
+.jumbo {
+	background-color: lightgray;
+	margin-bottom: 10px;
+	padding: 20px;
+}
+
+/* Show page
+================================= */
+
+.bizinfo>li {
+	margin-top: 20px;
+}
+
+.morebizinfo>p {
+	margin-bottom: 0;
+}
+
+p.lead {
+	margin-bottom: 0;
+}
+
+/* Nav bar
+================================= */
+.top-bar, ul.menu a {
+	background-color: #8dc63f;
+	font-weight: bold;
+	color: #fff;
+}
+
+#logo {
+	width: 30px;
+}
+
+.top-bar-right, .top-bar-left {
+	width: auto;
+}
+
+
+/* Landing page
+================================= */
+
+div#bkgrd {
+	position: relative;
+	float: left;
+	color: white;
+	padding-top: 100px;
+	width: 100%;
+	height: calc(100vh - 66px);
+	background-image: url('../img/taqueria1.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+div#bkgrd p {
+	position: absolute;
+	margin: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#landing {
+	text-shadow: 2px 1px 2px black;
+	margin: 20px 0 40px 0;
+}
+
+@media screen and (min-width: 640px) {
+.container {
+	padding: 2em 2em 1em 2em;
+}
+
+}
+
+@media screen and (min-width: 1024px) {
+.container {
+	padding: 2em 5em 1em 5em;
+}
+
+}
+
