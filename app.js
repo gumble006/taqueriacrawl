@@ -8,17 +8,18 @@ var express       = require('express'),
 	localStrategy = require("passport-local"),
 	User 		  = require("./models/user")
 	methodOverride = require('method-override'),
-	Comment 	  = require("./models/comment");
+	Comment 	  = require("./models/comment"),
 	flash		  = require("connect-flash");	
 
 var  indexRoutes 	= require("./routes/index"),
 	commentsRoutes  = require("./routes/comments"),
 	taqueriasRoutes = require("./routes/taquerias");
 
-// seedDB(); 
 
+// Database connect 
 mongoose.connect("mongodb://adamsgreg:password@ds011158.mlab.com:11158/taquerias");
 // mongoose.connect("mongodb://localhost/taquerias");
+
 
 app.use(express.static(__dirname + "/public"));
 

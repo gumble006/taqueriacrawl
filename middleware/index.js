@@ -1,7 +1,7 @@
 // middleware
 var Taqueria 	  	= require("../models/taquerias.js"),
 	Comment 	  	= require("../models/comment"),
- 	middleware  = {};
+ 	middleware  	= {};
 
 
 middleware.isLoggedIn = function(req, res, next) {
