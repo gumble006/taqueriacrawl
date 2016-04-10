@@ -11,13 +11,15 @@
 
 	</div>
 </div>
-<h3 class="text-center">Sign in to continue to TacoCrawl</h3>
+<h4 class="text-center">Log in to continue to TaqueriaCrawl</h4>
 <form class="AddEditForm" action="/login" method="POST">
+	<label for="username">Username:</label>
 	<input type="text" name="username" placeholder="username"></input>
+	<label for="username">Password:</label>
 	<input type="password" name="password" placeholder="password"></input>
 	<button class="button round">Login</button>	
 </form>
-<a href="/register">Sign Up</a>
+<a data-open="Modal2" class="registerlinks">Sign Up</a>
 
 <button class="close-button" data-close aria-label="Close modal" type="button">
     <span aria-hidden="true">&times;</span>

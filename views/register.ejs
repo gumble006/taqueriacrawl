@@ -1,10 +1,27 @@
-<% include partials/header %>
-<h4 class="text-center">Please provide login information to register</h4>
-<form class="AddEditForm" action="/register" method="POST">
+<div class="row">
+	<div class="small-12 column">
+		<% if (error && error.length > 0) { %>
+		<div class="callout small alert" role="alert"><%= error %></div>
+	<% } %>
+
+	<% if (success && success.length > 0) { %>
+		<div class="callout small success" role="alert"><%= success %></div>
+	<% } %>
+
+
+	</div>
+</div>
+
+<h4 class="">Please provide login information to register:</h4>
+<form class="" action="/register" method="POST">
+	<label for="username">Username:</label>
 	<input type="text" name="username" placeholder="username"></input>
+	<label for="username">Password:</label>
 	<input type="password" name="password" placeholder="password"></input>
 	<button class="button small round">Sign up</button>	
 </form>
 
 
-<% include partials/footer %>
+<button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>

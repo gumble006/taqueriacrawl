@@ -5,31 +5,43 @@ $(document).foundation();
 
 
 //modal windows
-var $addmodal = $('#AddModal'),
-	$loginmodal = $('#LoginModal'),
-	$editmodal = $('#EditModal'),
-	$postid = $('#postid').attr('data-internalid');
+var $postid = $('#postid').attr('data-internalid');
 
-$('#addbutton').click(function() {
-  $.ajax('/taquerias/new')
-  .done(function(resp){
-    $addmodal.html(resp);
-	});
+$('#addModal').click(function() {
+	$addmodal = $('#Modal')
+	$.ajax('/taquerias/new')
+		.done(function(resp){
+		$addmodal.html(resp).foundation('open');
+		});
 });
 
 $('#loginlink').click(function() {
+  var $loginmodal = $('#Modal');
   $.ajax('/login')
   .done(function(resp){
-    $loginmodal.html(resp);
+    $loginmodal.html(resp).foundation('open');
 	});
 });
 
 $('#editlink').click(function() {
-   $.ajax('/taquerias/' + $postid +'/edit')
+	var $editmodal = $('#Modal')
+	$.ajax('/taquerias/' + $postid +'/edit')
 	  .done(function(resp){
-	    $editmodal.html(resp);
+	    $editmodal.html(resp).foundation('open');
 		});
 });
+
+$('#registerlink').click(function() {
+	var $registermodal = $('#Modal2');
+	$registermodal.foundation('open');
+	
+});
+
+var $registermodal = $('#Modal2')
+$.ajax('/register')
+  .done(function(resp){
+    $registermodal.html(resp);
+	});
 
 
 //Landing page - background change

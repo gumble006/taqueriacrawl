@@ -81,7 +81,14 @@ p.lead {
 	width: auto;
 }
 
+ul.menu a {
+	padding-left: 3px;
+	padding-right: 6px;
+} 
 
+.top-bar {
+	padding: 3px;
+}
 /* Landing page
 ================================= */
 
@@ -91,7 +98,7 @@ div#bkgrd {
 	color: white;
 	padding-top: 100px;
 	width: 100%;
-	height: calc(100vh - 66px);
+	height: calc(100vh - 55px);
 	background-image: url('../img/taqueria1.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -107,6 +114,16 @@ div#bkgrd p {
 #landing {
 	text-shadow: 2px 1px 2px black;
 	margin: 20px 0 40px 0;
+}
+
+@media screen and (min-width: 363px) {
+
+ul.menu a {
+	padding: .7rem 1rem;
+}
+
+.top-bar {
+	padding: .5rem;
 }
 
 @media screen and (min-width: 640px) {

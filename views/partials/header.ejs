@@ -19,8 +19,8 @@
 	<div class="top-bar-right">
 		<ul class="menu">
 		  <% if(!currentUser) { %>
-					<li><a data-open="LoginModal" id="loginlink">Login</a></li>
-					<li><a href="/register">Sign Up</a></li>
+					<li><a id="loginlink">Login</a></li>
+					<li><a id="registerlink">Sign Up</a></li>
 				<%} else { %>
 					<li><a href="#">Logged in as: <strong><%= currentUser.username %></strong></a></li>
 					<li><a href="/logout">Log Out</a></li>
@@ -41,5 +41,8 @@
 	</div>
 </div>
 
-<div class="reveal" id="LoginModal" data-reveal>
+<div class="reveal" id="Modal" data-reveal>
+</div>
+
+<div class="reveal" id="Modal2" data-reveal>
 </div>

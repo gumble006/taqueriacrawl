@@ -22,7 +22,7 @@ router.post("/register", function(req, res) {
 		if(err){
 			console.log(err);
 			req.flash("error", err.message)
-			return res.render("register")
+			return res.redirect("/taquerias")
 		} else {
 			passport.authenticate("local")(req, res, function(){
 				req.flash("success", "Successfully joined as " + user.username);
@@ -40,14 +40,16 @@ router.get("/login", function(req, res){
 
 router.post("/login", passport.authenticate('local', 
 		{successRedirect: "/taquerias",
-		 failureRedirect: "/login"
-		}), function(req, res) {});
+		 failureRedirect: "/taquerias",
+		 failureFlash: true
+		}), function(req, res) {
+});
 	
 
 //logout
 router.get("/logout", function(req, res){
 	req.logout();
-	req.flash("success", "Logged you out.");
+	req.flash("success", "Successfully logged out.");
 	res.redirect("/taquerias");
 });
 
