@@ -98,7 +98,7 @@ div#bkgrd {
 	color: white;
 	padding-top: 100px;
 	width: 100%;
-	height: calc(100vh - 55px);
+	height: calc(100vh - 59px);
 	background-image: url('../img/taqueria1.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
