@@ -45,6 +45,7 @@ passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+
 // allow username to be used on indiv. pages
 app.use(function(req,res,next){
 	res.locals.currentUser = req.user;
