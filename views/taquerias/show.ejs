@@ -11,7 +11,7 @@
 			<div class="bizinfo no-bullet">
 				<ul class="no-bullet">
 					<li class="list-group-item active">Address</li>
-						<li><p class="subheader"><a href="http://maps.google.com?q=<%= taqueria.address %>" target="_blank"><%= taqueria.address.toUpperCase() %></a></p></li>
+						<li><p class="subheader"><a href="http://maps.google.com?q=<%= encodeURI(taqueria.address) %>" target="_blank"><%= taqueria.address.toUpperCase() %></a></p></li>
 			
 					<li class="list-group-item">More Business Info</li>
 						
