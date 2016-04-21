@@ -62,8 +62,10 @@
 /* Show page
 ================================= */
 
-.bizinfo>li {
+.bizinfo ul {
 	margin-top: 20px;
+	list-style: none;
+	padding-left:0;
 }
 
 .morebizinfo>p {

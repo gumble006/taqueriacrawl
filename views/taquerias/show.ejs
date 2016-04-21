@@ -8,32 +8,34 @@
 			<p class="lead"><%= taqueria.name %></p>
 			<em><p class="subheader">Submitted by <%= taqueria.author.username %></p></em>
 			<div class="bizinfo no-bullet">
-				<li class="list-group-item active">Address</li>
-					<p class="subheader"><a href="http://maps.google.com?q=<%= taqueria.address %>" target="_blank"><%= taqueria.address.toUpperCase() %></a></p>
-		
-				<li class="list-group-item">More Business Info</li>
-					
-						<% if(taqueria.bikeparking){ %>
-						<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Bike Parking Available</li>
-						<% } %>
+				<ul class="no-bullet">
+					<li class="list-group-item active">Address</li>
+						<p class="subheader"><a href="http://maps.google.com?q=<%= taqueria.address %>" target="_blank"><%= taqueria.address.toUpperCase() %></a></p>
+			
+					<li class="list-group-item">More Business Info</li>
+						
+							<% if(taqueria.bikeparking){ %>
+							<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Bike Parking Available</li>
+							<% } %>
 
-						<% if(taqueria.barter){ %>
-						<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Accepts Barter/Trade</li>
-						<% } %>
+							<% if(taqueria.barter){ %>
+							<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Accepts Barter/Trade</li>
+							<% } %>
 
-						<% if(taqueria.salsabar){ %>
-						<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Salsa Bar</li>
-						<% } %>
+							<% if(taqueria.salsabar){ %>
+							<li class="morebizinfo subheader no-bullet"><i class="fa fa-check-circle"></i> Salsa Bar</li>
+							<% } %>
+				</ul>
 			</div>
 		</div>
 		<div class="medium-9 column">
 			<div class="thumbnail show-thumbnail">
-				<img class="img-responsive" src="<%= taqueria.image %>">
+				<img class="img-responsive" src="<%= taqueria.image %>" alt="<%= taqueria.name %>">
 				<div class="caption-full">
 					<p class="float-right">Average <%=taqueria.price%> / burrito</p>
 					<h4><%= taqueria.name %></h4>
 					<p><%= taqueria.description %></p>
-					<em><p>Submitted by <%= taqueria.author.username %></p></em>
+					<p><em>Submitted by <%= taqueria.author.username %></em></p>
  
 					<% if(currentUser && taqueria.author.id.equals(currentUser._id)) { %>
 

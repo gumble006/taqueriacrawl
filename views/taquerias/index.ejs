@@ -8,9 +8,7 @@
 	<div class="small-12 column jumbo">
 		<h1>TaqueriaCrawl</h1>
 		<p>TaqueriaCrawl enables anyone to publish and access information on great mexican food spots in Portland.</p>
-		<p>
-			<a id="addModal" class="button small round">Add a new taqueria</a>
-		</p>
+		<p><a id="addModal" class="button small round">Add a new taqueria</a></p>
 	</div>
 	
 	</header>
@@ -21,11 +19,8 @@
 				<div>
 					<a href="/taquerias/<%= taqueria._id %>">
 					<h4><%= taqueria.name %></h4>
-					<img src="<%=taqueria.image%>" class="thumbnail index img-responsive">
-					
-					<p>
-					<a class="button small round" href="/taquerias/<%= taqueria._id %>">More Info</a>
-					</p></a>
+					<img src="<%=taqueria.image%>" class="thumbnail index img-responsive" alt="<%= taqueria.name %>"> </a>
+					<p><a class="button small round" href="/taquerias/<%= taqueria._id %>">More Info</a></p>
 				</div>
 			</div>
 		<% }) %>

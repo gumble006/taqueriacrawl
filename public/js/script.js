@@ -44,45 +44,4 @@ $.ajax('/register')
 	});
 
 
-//Landing page - background change
-
-	$.preloadImages = function() {
-		for (var i = 0; i < arguments.length; i++) {
-			$("<img />").attr("src", arguments[i]);
-			}
-		}
-
-	$.preloadImages("img/taqueria1.jpg","img/taqueria2.jpg", "img/taqueria3.jpg");
-
-	var bkgrd = $('div#bkgrd');
-	var backgrounds = new Array(
-	    'url(img/taqueria1.jpg)',
-	  	'url(img/taqueria2.jpg)',
-	  	'url(img/taqueria3.jpg)'
-	);
-
-	var current = 0;
-
-	function nextBackground() {
-	    current++;
-	    current = current % backgrounds.length;
-	    bkgrd.css('background-image', backgrounds[current]);
-	}
-	setInterval(nextBackground, 10000);
-
-	bkgrd.css('background-image', backgrounds[0]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
