@@ -22,9 +22,10 @@ var config = require("./config");
 // mongoose.connect("mongodb://localhost/taquerias");
 // mongoose.connect(config.getDBconnect());
 
-mongoose.connect(config.getDBconnect(), function(err) {
+
+mongoose.connect(config.DBconnect(process.env.login), function(err) {
   if (err) {
-    console.log('Hey- Failed connecting to MongoDB');
+    console.log('Hold on-- Failed connecting to MongoDB');
   } else {
     console.log('Cool- Successfully connected to MongoDB');
   }
