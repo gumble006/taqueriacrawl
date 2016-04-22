@@ -15,15 +15,12 @@ var  indexRoutes 	= require("./routes/index"),
 	commentsRoutes  = require("./routes/comments"),
 	taqueriasRoutes = require("./routes/taquerias");
 
-var dbconfig = require("./config");
+
 
 // Database connect 
-// mongoose.connect("mongodb://adamsgreg:password@ds011158.mlab.com:11158/taquerias");
 // mongoose.connect("mongodb://localhost/taquerias");
-// mongoose.connect(config.getDBconnect());
-
-
-mongoose.connect(dbconfig.DBconnect(process.env.login), function(err) {
+var dbconfig = require("./config");
+mongoose.connect(dbconfig.uri(process.env.login), function(err) {
   if (err) {
     console.log('Hold on-- Failed connecting to MongoDB');
   } else {
