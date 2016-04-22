@@ -23,13 +23,13 @@ var config = require("./config");
 // mongoose.connect(config.getDBconnect());
 
 
-// mongoose.connect(config.DBconnect(process.env.login), function(err) {
-//   if (err) {
-//     console.log('Hold on-- Failed connecting to MongoDB');
-//   } else {
-//     console.log('Cool- Successfully connected to MongoDB');
-//   }
-// });
+mongoose.connect('mongodb://gregadams:Luke8875@ds011158.mlab.com:11158/taquerias', function(err) {
+  if (err) {
+    console.log('Hold on-- Failed connecting to MongoDB');
+  } else {
+    console.log('Cool- Successfully connected to MongoDB');
+  }
+});
 
 
 app.use(express.static(__dirname + "/public"));
@@ -68,6 +68,7 @@ app.use(function(req,res,next){
 app.use(indexRoutes);
 app.use(taqueriasRoutes);
 app.use(commentsRoutes);
+
 
 
 var port = process.env.PORT || 3000;

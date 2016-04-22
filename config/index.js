@@ -3,8 +3,8 @@ var configValues = require('./config.json');
 
 module.exports = {
 	
-	DBconnect: function(ENVlogin) {
-		var url = ENVlogin || configValues.login;
+	DBconnect: function(login) {
+		var url = login || configValues.login;
 
 		return url
 	}
