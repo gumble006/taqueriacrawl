@@ -15,7 +15,7 @@ var  indexRoutes 	= require("./routes/index"),
 	commentsRoutes  = require("./routes/comments"),
 	taqueriasRoutes = require("./routes/taquerias");
 
-// var config = require("./config");
+var config = require("./config/index");
 
 // Database connect 
 // mongoose.connect("mongodb://adamsgreg:password@ds011158.mlab.com:11158/taquerias");
