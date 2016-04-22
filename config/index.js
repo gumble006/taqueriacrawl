@@ -1,4 +1,7 @@
-var configValues = require('./config.json');
+// var configValues = require('./config.json');
+
+try {var configValues = require('./config.json')}
+				   catch (e) {console.log('error')};
 
 module.exports = {
 	
