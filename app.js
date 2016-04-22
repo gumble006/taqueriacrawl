@@ -15,10 +15,20 @@ var  indexRoutes 	= require("./routes/index"),
 	commentsRoutes  = require("./routes/comments"),
 	taqueriasRoutes = require("./routes/taquerias");
 
+var config = require("./config");
 
 // Database connect 
-mongoose.connect("mongodb://adamsgreg:password@ds011158.mlab.com:11158/taquerias");
+// mongoose.connect("mongodb://adamsgreg:password@ds011158.mlab.com:11158/taquerias");
 // mongoose.connect("mongodb://localhost/taquerias");
+// mongoose.connect(config.getDBconnect());
+
+mongoose.connect(config.getDBconnect(), function(err) {
+  if (err) {
+    console.log('Hey- Failed connecting to MongoDB');
+  } else {
+    console.log('Cool- Successfully connected to MongoDB');
+  }
+});
 
 
 app.use(express.static(__dirname + "/public"));
