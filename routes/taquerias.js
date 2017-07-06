@@ -24,16 +24,13 @@ router.get("/taquerias", function(req, res){
 router.post("/taquerias", middleware.isLoggedIn, function(req, res){
 	var name 			= req.body.name,
 		image 			= req.body.image,
-		description 	= req.body.description,
+		description = req.body.description,
 		address 		= req.body.address,
-		bikeparking 	= req.body.bikeparking,
+		bikeparking = req.body.bikeparking,
 		barter 			= req.body.barter
 		salsabar 		= req.body.salsabar,
-		price			= req.body.price,
-		author 			= {
-							id: req.user._id,
-							username: req.user.username
-						   };
+		price				= req.body.price,
+		author 			= {	id: req.user._id,	username: req.user.username };
 
 	var newTaqueria = {name: name, image: image, description: description, address: address, bikeparking: bikeparking, barter: barter, salsabar: salsabar, price: price, author:author };
 
