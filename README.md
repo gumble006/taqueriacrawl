@@ -10,4 +10,4 @@ Taqueria Crawl is a project designed for users to map, catalog, and publish feed
 
 `npm start` and visit localhost:3000 in your browser
 
-The project uses Mongoose and/or MLab account for data store.
+The project uses a local MongoDB setup or MLab account for data store.
